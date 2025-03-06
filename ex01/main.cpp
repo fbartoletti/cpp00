@@ -8,8 +8,10 @@ int main() {
 	
 	while(true) {
 		std::cout << "Command (ADD, SEARCH, EXIT): ";
-		std::getline(std::cin, command);
-		
+		if (!std::getline(std::cin, command) || command.empty()) {
+			std::cout << "\nEOF detected or empty input. Exiting program." << std::endl;
+			break;
+		}
 		if(command == "ADD")
 			phonebook.addContact();
 		else if (command == "SEARCH")
