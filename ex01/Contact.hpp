@@ -12,7 +12,7 @@ private:
 	std::string nickname;
 	std::string phone_number;
 	std::string darkest_secret;
-	
+	bool check_number(std::string number);
 public:
 	void setInfo();
 	bool isEmpty() const;
